@@ -6,7 +6,7 @@ export default defineConfig({
   // ВАЖНО: замени на точное название своего репозитория на GitHub
   // Например если репо: github.com/ivan/my-antalya → base: '/my-antalya/'
   // Если репо: github.com/ivan/ivan.github.io     → base: '/'
-  base: process.env.VITE_BASE_PATH ||'/my-tele-bot/'
+  base: '/my-tele-bot/'
   server: {
     port: 3000,
     host: true
