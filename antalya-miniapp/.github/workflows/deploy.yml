@@ -12,14 +12,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install
-      - run: npm run build
+      - name: Go to project folder and install
+        run: cd antalya-miniapp && npm install
+      - name: Build
+        run: cd antalya-miniapp && npm run build
         env:
           VITE_BASE_PATH: /my-tele-bot/
-      - run: touch dist/.nojekyll
+      - name: Add .nojekyll
+        run: cd antalya-miniapp && touch dist/.nojekyll
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: antalya-miniapp/dist
 
   deploy:
     needs: build
