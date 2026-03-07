@@ -8,7 +8,7 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
+      - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Setup Node.js
@@ -22,8 +22,8 @@ jobs:
       - name: Build project
         run: npm run build
         env:
+          # Явно указываем base path твоего репозитория
           VITE_BASE_PATH: /my-tele-bot/
-          # Если есть другие переменные, добавь их сюда или используй secrets
 
       - name: Add .nojekyll
         run: touch dist/.nojekyll
